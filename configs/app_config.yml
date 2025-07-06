@@ -33,7 +33,7 @@ summarizer_config:
   token_threshold: 0
   summarizer_llm_system_role: "You are an expert text summarizer. You will receive a text and your task is to summarize and keep all the key information.\
                                Kepp the maximum length of summary within {} number of tokens."
-  inal_summarizer_llm_system_role: "You are an expert text summarizer. You will receive a text and your task is to give a comprehensive summary and keep all the key information."
+  final_summarizer_llm_system_role: "You are an expert text summarizer. You will receive a text and your task is to give a comprehensive summary and keep all the key information."
 
 splitter_config:
   chunk_size: 1500
