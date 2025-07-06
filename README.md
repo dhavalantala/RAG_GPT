@@ -2,6 +2,8 @@
 
 **RAG GPT** is a modular system for document ingestion, vector search, summarization, and conversational interaction powered by GPT models. It combines a Vector Database with GPT-based summarization and chat functionality to provide document understanding and interactive querying.
 
+RAG-GPT supports both **PDF** and **DOCX** document formats, offering flexible, real-time document interaction with an intuitive user interface.
+
 ## 📦 Project Structure
 
 The project is divided into **four main components**, designed to work together or independently:
@@ -47,6 +49,23 @@ The project is divided into **four main components**, designed to work together 
 ## Project Flow
 ![](https://github.com/dhavalantala/RAG_GPT/blob/740e74c81c1b88d22b440aba0a6c99fccb372a2f/images/RAGGPT_schema.png)
 
+## **💡 Key Features**
+
+- ✅ Chatbot supports three interaction modes:
+
+    - **Offline Document**s: Pre-ingested and vectorized documents ready for querying
+
+    - **Real-Time Uploads**: Upload documents during chat for instant processing
+
+    - **Summarization Requests**: Generate comprehensive summaries on demand
+
+- ✅ Simple interface with **Gradio** for document upload, chat interaction, and result visualization
+
+- ✅ Persistent chat memory for enhanced, context-aware conversations
+
+- ✅ View retrieved content chunks alongside GPT responses for transparency
+
+- ✅ Configurable GPT settings, such as temperature control, for response tuning
 
 ## **⚠️ Known Limitations**
 
