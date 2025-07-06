@@ -92,3 +92,60 @@ Here is a screenshot of the RAG-GPT chatbot interface:
 - For extensive documents, batching, throttling, or upgraded API access may be required.
 
 **Note**: The system is optimized for documents up to ~50 pages, such as academic papers or short reports. It can be expanded for larger use cases, but additional engineering is needed to address the limitations above.
+
+## **🚀 Running the Project**
+
+To get the project up and running, follow these simple steps to configure your environment and run the application.
+
+### **🔧 Environment Setup**
+
+Follow these steps to set up your environment and run the application:
+
+### 🔧 Installation
+
+1. Navigate to the project root:
+    ```
+    cd RAG-GPT
+    ```
+
+2. Install all required dependencies using the provided `requirements.txt`:
+    ```
+    pip install -r requirements.txt
+    ```
+
+### ⚙️ Configuration
+
+1. Create a `.env` file in the project root directory.
+
+2. Add your OpenAI API key:
+    ```
+    OPENAI_API_KEY=your_openai_api_key_here
+    ```
+
+### ▶️ Running the Application
+1. Start the backend service: 
+    ```
+    python src/serve.py
+    ```
+
+2. In a new terminal, run the Gradio chatbot interface:
+    ```
+    python src/raggpt_app.py
+    ```
+
+- After launching, you should see an output like:
+server{
+    Running on local URL:  http://127.0.0.1:7860
+}
+
+### 💬 Start Chatting
+
+- Open your browser and go to `http://127.0.0.1:7860`.
+
+- Upload documents, ask questions, or request summaries through the chatbot interface.
+
+
+
+## 🆘 Troubleshooting
+
+For port management and common setup issues, refer to [TROUBLESHOOTING.md](./TROUBLESHOOTING.md).
