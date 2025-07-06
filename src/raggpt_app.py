@@ -80,7 +80,7 @@ with gr.Blocks() as demo:
                 temperature_bar = gr.Slider(minimum=0, maximum=1, value=0, step=0.1,
                                             label="Temperature", info="Choose between 0 and 1")
                 rag_with_dropdown = gr.Dropdown(
-                    label="RAG with", choices=["Preprocessed doc", "Upload doc: Process for RAG", "Upload doc: Give Full summary"], value="Preprocessed doc")
+                    label="RAG with", choices=["Preprocessed doc", "Upload doc: Process for RAG", "Upload doc: Give Full Summary"], value="Preprocessed doc")
                 clear_button = gr.ClearButton([input_txt, chatbot])
 
             ##############

@@ -37,11 +37,11 @@ class UploadFile:
                                                         chunk_overlap=APPCFG.chunk_overlap)
             
             prepare_vectordb_instance.perpare_and_save_vectordb()
-            chatbot.append(" ", "Upload files are ready. Please ask your question")
+            chatbot.append((" ", "Upload files are ready. Please ask your question"))
 
         elif rag_with_dropdown == "Upload doc: Give Full Summary":
             final_summary = Summarizer.summarize_the_pdf(file_dir=files_dir[0],
-                                                         max_final_token=APPCFG.custom_persist_directory, 
+                                                         max_final_token=APPCFG.max_final_token, 
                                                          token_threshold=APPCFG.token_threshold,
                                                          gpt_model=APPCFG.llm_engine,
                                                          temperature=APPCFG.temperature,
@@ -54,7 +54,7 @@ class UploadFile:
         
         else:
             chatbot.append(
-                (" ", "If you would like to upload a PDF, please select your desired action in 'rag_with' dropdown.")
+                (" ", "If you would like to upload a PDF, please select your desired action in 'RAG with' dropdown.")
             )
 
         return "", chatbot

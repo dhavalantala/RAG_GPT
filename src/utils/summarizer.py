@@ -43,8 +43,8 @@ class Summarizer:
         docs = []
         docs.extend(PyPDFLoader(file_dir).load())
         print(f"Document length: {len(docs)}")
-        max_summarizer_output_token = int(
-            max_final_token/len(docs)) - token_threshold
+        max_final_token = int(max_final_token)
+        max_summarizer_output_token = int(max_final_token / len(docs)) - token_threshold
         full_summary = ""
         counter = 1
         print("Generating the summary..")
@@ -55,7 +55,7 @@ class Summarizer:
                 # NOTE: This part can be optimized by considering a better technique for creating the prompt. (e.g: lanchain "chunksize" and "chunkoverlap" arguments.)
 
                 if i==0:
-                    prompt = docs[i].page_count + docs[i + 1].page_content[:character_overlap]
+                    prompt = docs[i].page_content + docs[i + 1].page_content[:character_overlap]
                 
                 # For pages except the fist and the last one.
                 elif i < len(docs) - 1:
@@ -102,11 +102,12 @@ class Summarizer:
         Returns:
             str: The response content from the ChatGPT engine.
         """
-        response = openai.ChatCompletion.create(
-            engine=gpt_model,
+        response = openai.chat.completions.create(
+            model=gpt_model,
             messages=[
                 {"role": "system", "content": llm_system_role},
-                {"role": "user", "content": prompt} ],
-            temperature=temperature,)
-    
-        return response.choices[0].massage.content
+                {"role": "user", "content": prompt}
+            ],
+            temperature=temperature
+        )
+        return response.choices[0].message.content

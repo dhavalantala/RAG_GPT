@@ -67,6 +67,12 @@ The project is divided into **four main components**, designed to work together 
 
 - ✅ Configurable GPT settings, such as temperature control, for response tuning
 
+## **🖥️ User Interface Preview**
+
+Here is a screenshot of the RAG-GPT chatbot interface:
+
+![RAG-GPT Chatbot Screenshot](images/GUI.png)
+
 ## **⚠️ Known Limitations**
 
 **1. Second GPT Model Context Length**
